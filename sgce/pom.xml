@@ -22,6 +22,14 @@
             <scope>compile</scope>
         </dependency>
         
+        <!-- ######## TEMAS DO PRIMEFACES ######### -->
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>all-themes</artifactId>
+            <version>1.0.8</version>
+        </dependency>
+        
+          
         <!-- Mojarra (implementacao do JSF) -->
         <dependency>
             <groupId>org.glassfish</groupId>
