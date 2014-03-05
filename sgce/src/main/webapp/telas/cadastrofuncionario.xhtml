@@ -7,52 +7,117 @@
 
     <ui:define name="titulo">Novo Funcionario</ui:define>
     <ui:define name="corpo">
-        <h1>Novo Funcionário</h1>
+        <h1>Novo Funcionario</h1>
 
-        <p:toolbar style="margin-top: 20px">
-            <p:toolbarGroup>
-                <p:button value="Novo" outcome="/telas/cadastrofuncionario"/>
-                <p:commandButton value="Salvar" id="botaoSalvar"/>
-            </p:toolbarGroup>
-            <p:toolbarGroup align="right">
-                <p:button value="Pesquisa"/>
-            </p:toolbarGroup>
-        </p:toolbar>
+        <style>
+            .sem-bordas td {
+                border: none;
+                padding: 5px;
+            }
+        </style>
+        
+        <h:body>
 
-        <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px"
-                     columnClasses="rotulo, campo">
-            
-            <p:outputLabel value="Nome" for="nome"/>
-    		<p:inputText id="nome" size="50" maxlength="50"/>
-                    		                
-                <p:outputLabel value="Login" for="login"/>
-    		<p:inputText id="login" size="20" maxlength="20"/>             
-    		                    		
-    		<p:outputLabel value="Senha" for="senha"/>
-                <p:inputText id="senha" size="10" maxlength="10"/>  
-                
-    		<p:outputLabel value="Confirmar Senha" for="confirmarsenha"/>
-                <p:inputText id="confirmarsenha" size="10" maxlength="10"/>  
-                
-                <p:outputLabel value="Tipo Funcionário" for="tipofuncionario"/>
-    		<p:selectOneMenu id="tipofuncionario">
-    			<f:selectItem itemLabel="Selecione a Cidade"/>
-    		</p:selectOneMenu>
-                
-                <p:outputLabel value="Endereço" for="endereco"/>
-    		<p:inputText id="endereco" size="50" maxlength="50"/>
-                
-                <p:outputLabel value="Cidade" for="cidade"/>
-    		<p:selectOneMenu id="cidade">
-    			<f:selectItem itemLabel="Selecione a Cidade"/>
-    		</p:selectOneMenu>
-    		    		
-    		<p:outputLabel value="Bairro" for="bairro"/>
-    		<p:selectOneMenu id="bairro">
-    			<f:selectItem itemLabel="Selecione o Bairro"/>
-    		</p:selectOneMenu>                
-                
-        </p:panelGrid>
+
+            <h:form id="frm">
+                <p:tabView orientation="top" effect="fade" effectDuration="fast">                    
+                    <p:tab title="Dados Funcionário" >
+
+                        <p:toolbar >
+                            <p:toolbarGroup>
+                                <p:button value="Novo" outcome="/telas/cadastrofuncionario"/>
+                                <p:commandButton value="Salvar" id="botaoSalvar"/>
+                            </p:toolbarGroup>
+                            <p:toolbarGroup align="right">
+                                <p:button value="Pesquisa"/>
+                            </p:toolbarGroup>
+                        </p:toolbar>
+
+                        <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px"
+                                     columnClasses="rotulo, campo">
+
+                            <p:outputLabel value="Nome" for="nome"/>
+                            <p:inputText id="nome" required="true" size="50" maxlength="50"/>
+
+                            <p:outputLabel value="Login" for="login"/>
+                            <p:inputText id="login" required="true" size="20" maxlength="20"/>             
+
+                            <p:outputLabel value="Senha" for="senha"/>
+                            <p:password id="senha" required="true" size="15" maxlength="15" 
+                                        feedback="true" weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte"
+                                        promptLabel="Informe a Senha" match="confirmarsenha"/>  
+
+                            <p:outputLabel value="Confirmar Senha" for="confirmarsenha"/>
+                            <p:password id="confirmarsenha" required="true" size="15" maxlength="15"
+                                        feedback="true" weakLabel="Fraca" goodLabel="Boa" strongLabel="Forte"
+                                        promptLabel="Informe a Senha" />  
+
+                            <p:outputLabel value="Tipo Funcionário" for="tipofuncionario"/>
+                            <p:selectOneMenu id="tipofuncionario" required="true">
+                                <f:selectItem itemLabel="Selecione a Cidade" />
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Endereço" for="endereco"/>
+                            <p:inputText id="endereco" required="true" size="50" maxlength="50"/>
+
+                            <p:outputLabel value="Estado" for="estado"/>
+                            <p:selectOneMenu id="estado" required="true">
+                                <f:selectItem itemLabel="Selecione o Estado"/>
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Cidade" for="cidade"/>
+                            <p:selectOneMenu id="cidade" required="true">
+                                <f:selectItem itemLabel="Selecione a Cidade"/>
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Bairro" for="bairro"/>
+                            <p:selectOneMenu id="bairro" required="true">
+                                <f:selectItem itemLabel="Selecione o Bairro"/>
+                            </p:selectOneMenu>                
+
+                        </p:panelGrid>
+                    </p:tab>
+
+                    <p:tab title="Professor">
+                        <p:toolbar >
+                            <p:toolbarGroup>                                
+                                <p:commandButton value="Salvar" id="botSalvar"/>
+                            </p:toolbarGroup>
+
+                            <p:toolbarGroup align="right">
+                                <p:button value="Pesquisa"/>
+                            </p:toolbarGroup>
+                        </p:toolbar>
+
+                        <br/>                       
+
+                        <p:panelGrid columns="2" id="painel2" style="width: 100%; margin-top: 0px"
+                                     columnClasses="rotulo, campo">
+
+                            <p:outputLabel value="Professor" for="professor"/>
+                            <p:selectOneMenu id="professor">
+                                <f:selectItem itemLabel="Selecione o Professor"/>
+                            </p:selectOneMenu>                
+
+                            <p:outputLabel value="Série" for="serie"/>
+                            <p:selectOneMenu id="serie">
+                                <f:selectItem itemLabel="Selecione a Série"/>
+                            </p:selectOneMenu>
+
+                            <p:outputLabel value="Turma" for="turma"/>
+                            <p:selectManyCheckbox id="turma" required="true" styleClass="sem-bordas">
+                                <f:selectItem itemLabel="A" itemValue="1"/>
+                                <f:selectItem itemLabel="B" itemValue="2"/>
+                                <f:selectItem itemLabel="C" itemValue="3"/>
+                                <f:selectItem itemLabel="D" itemValue="4"/>
+                            </p:selectManyCheckbox>
+
+                        </p:panelGrid>
+                    </p:tab>
+                </p:tabView>
+            </h:form>
+
+        </h:body>
 
     </ui:define>
 
