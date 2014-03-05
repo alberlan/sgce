@@ -14,10 +14,48 @@
     </h:head>
 
     <h:body>
+        <p:ajaxStatus styleClass="ajax-status">
+            <f:facet name="start">
+                <h:graphicImage library="images" name="loading.gif"/>
+            </f:facet>
+            <f:facet name="complete">
+                <h:outputText value=""/>
+            </f:facet>
+        </p:ajaxStatus>
+
         <header>
-            <div>
+            <div style="float: left">
 
             </div>
+
+            <div style="float: right; margin-right: 110px">
+                <span style="float: left; height: 30px; line-height: 30px; margin-right: 60px">
+                    Olá usuário!
+                </span>
+
+                <h:form style="display: inline-block">
+                    <p:menubar styleClass="menu-sistema">
+                        <p:submenu label="Cadastros">
+                            <p:menuitem value="Aluno" outcome="/telas/cadastroaluno" />
+                            <p:menuitem value="Funcionário" outcome="/telas/cadastrofuncionario" />
+                            <p:menuitem value="Turma" outcome="/telas/turma"/>
+                            <p:menuitem value="Disciplina" outcome="/telas/disciplina"/>
+                            <p:menuitem value="Série" outcome="/telas/serie"/>
+                            <p:separator/>
+                            <p:menuitem value="Categorias" />
+                            <p:menuitem value="Produtos" outcome="/telas/cadastroaluno" />
+                        </p:submenu>
+                        <p:submenu label="Pedidos">
+                            <p:menuitem value="Novo pedido" outcome="/telas/cadastroaluno" />
+                            <p:menuitem value="Pesquisa" outcome="/telas/cadastroaluno" />
+                        </p:submenu>
+                        <p:menuitem value="Sair" />
+                    </p:menubar>
+                </h:form>
+            </div>
+            
+            <div style="clear: both"></div>
+
         </header>
 
         <div id="conteudo">

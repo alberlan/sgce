@@ -12,7 +12,7 @@ header {
 	margin-bottom: 20px;
 	height: 30px;
         margin-top: 5px;
-	background-color: #00BFFF;
+	background-color: #5CACEE;
 	color: #fff;
 
 	box-shadow: 0px 2px 2px #ccc;
@@ -60,4 +60,29 @@ h1 {
 
 .ui-panelgrid td {
 	height: 34px
+}
+
+.ajax-status {
+	position: fixed;
+	top: 55px;
+	right: 10px;
+	width: 35px;
+	height: 35px
+}
+
+/* Menu sistema inicio */
+.menu-sistema {
+    border: 0px !important;
+    padding: 0px !important;
+    background: none !important;
+}
+
+.menu-sistema .ui-menu-parent > a .ui-menuitem-text, .menu-sistema > .ui-menu-list > .ui-menuitem > a > .ui-menuitem-text {
+    color: #ffffff !important;
+}
+/* Menu sistema fim */
+
+ .sem-bordas td {
+    border: none;
+    padding: 5px;
 }
