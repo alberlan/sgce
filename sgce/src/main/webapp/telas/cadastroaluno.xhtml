@@ -54,7 +54,7 @@
 
                         </p:panelGrid>
                     </p:tab>
-                    
+
                     <p:tab title="Matrícula">
 
                         <p:toolbar >
@@ -73,9 +73,8 @@
                                      columnClasses="rotulo, campo">
 
                             <p:outputLabel value="Aluno" for="aluno"/>
-                            <p:selectOneMenu id="aluno">
-                                <f:selectItem itemLabel="Selecione o Aluno"/>
-                            </p:selectOneMenu>                
+                            <p:autoComplete id="aluno" value="" required="true" completeMethod="ttrtr" 
+                                            forceSelection="true" dropdown="true"/>  
 
                             <p:outputLabel value="Série" for="serie"/>
                             <p:selectOneMenu id="serie">
