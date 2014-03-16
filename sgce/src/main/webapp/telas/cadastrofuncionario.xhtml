@@ -9,19 +9,13 @@
     <ui:define name="corpo">
         <h1>Novo Funcionario</h1>
 
-        <style>
-            .sem-bordas td {
-                border: none;
-                padding: 5px;
-            }
-        </style>
-
+        
         <h:body>
 
 
             <h:form id="frm">                
 
-                        <p:toolbar >
+                        <p:toolbar style="margin-top: 10px" >
                             <p:toolbarGroup>
                                 <p:button value="Novo" outcome="/telas/cadastrofuncionario"/>
                                 <p:commandButton value="Salvar" id="botaoSalvar"/>
