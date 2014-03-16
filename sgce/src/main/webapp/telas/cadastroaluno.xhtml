@@ -13,82 +13,50 @@
 
 
             <h:form id="frm">
-                <p:tabView orientation="top" effect="fade" effectDuration="fast">                    
-                    <p:tab title="Dados Aluno" >
 
-                        <p:toolbar >
-                            <p:toolbarGroup>
-                                <p:button value="Novo" outcome="/telas/cadastroaluno"/>
-                                <p:commandButton value="Salvar" id="botaoSalvar"/>
-                            </p:toolbarGroup>
-                            <p:toolbarGroup align="right">
-                                <p:button value="Pesquisa"/>
-                            </p:toolbarGroup>
-                        </p:toolbar>
+                <p:toolbar >
+                    <p:toolbarGroup>
+                        <p:button value="Novo" outcome="/telas/cadastroaluno"/>
+                        <p:commandButton value="Salvar" id="botaoSalvar"/>
+                    </p:toolbarGroup>
+                    <p:toolbarGroup align="right">
+                        <p:button value="Pesquisa"/>
+                    </p:toolbarGroup>
+                </p:toolbar>
 
-                        <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px"
-                                     columnClasses="rotulo, campo">
+                <p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px"
+                             columnClasses="rotulo, campo">
 
-                            <p:outputLabel value="Nome" for="nome"/>
-                            <p:inputText id="nome" size="50" maxlength="50"/>
+                    <p:outputLabel value="Nome" for="nome"/>
+                    <p:inputText id="nome" size="50" maxlength="50"/>
 
-                            <p:outputLabel value="Responsável" for="responsavel"/>
-                            <p:inputText id="responsavel" size="50" maxlength="50"/>
+                    <p:outputLabel value="Responsável" for="responsavel"/>
+                    <p:inputText id="responsavel" size="50" maxlength="50"/>
 
-                            <p:outputLabel value="E-mail" for="email"/>
-                            <p:inputText id="email" size="50" maxlength="50"/>                
+                    <p:outputLabel value="E-mail" for="email"/>
+                    <p:inputText id="email" size="50" maxlength="50"/>                
 
 
-                            <p:outputLabel value="Endereço" for="endereco"/>
-                            <p:inputText id="endereco" size="50" maxlength="50"/>     		
+                    <p:outputLabel value="Endereço" for="endereco"/>
+                    <p:inputText id="endereco" size="50" maxlength="50"/>     		
 
-                            <p:outputLabel value="Cidade" for="cidade"/>
-                            <p:selectOneMenu id="cidade">
-                                <f:selectItem itemLabel="Selecione a Cidade"/>
-                            </p:selectOneMenu>                
+                    <p:outputLabel value="Estado" for="estado"/>
+                    <p:selectOneMenu id="estado">
+                        <f:selectItem itemLabel="Selecione o Estado"/>
+                    </p:selectOneMenu> 
 
-                            <p:outputLabel value="Bairro" for="bairro"/>
-                            <p:selectOneMenu id="bairro">
-                                <f:selectItem itemLabel="Selecione o Bairro"/>
-                            </p:selectOneMenu>
+                    <p:outputLabel value="Cidade" for="cidade"/>
+                    <p:selectOneMenu id="cidade">
+                        <f:selectItem itemLabel="Selecione a Cidade"/>
+                    </p:selectOneMenu>                
 
-                        </p:panelGrid>
-                    </p:tab>
+                    <p:outputLabel value="Bairro" for="bairro"/>
+                    <p:selectOneMenu id="bairro">
+                        <f:selectItem itemLabel="Selecione o Bairro"/>
+                    </p:selectOneMenu>
 
-                    <p:tab title="Matrícula">
+                </p:panelGrid>                 
 
-                        <p:toolbar >
-                            <p:toolbarGroup>                                
-                                <p:commandButton value="Salvar" id="botSalvar"/>
-                            </p:toolbarGroup>
-
-                            <p:toolbarGroup align="right">
-                                <p:button value="Pesquisa"/>
-                            </p:toolbarGroup>
-                        </p:toolbar>
-
-                        <br/>                       
-
-                        <p:panelGrid columns="2" id="painel2" style="width: 100%; margin-top: 0px"
-                                     columnClasses="rotulo, campo">
-
-                            <p:outputLabel value="Aluno" for="aluno"/>
-                            <p:autoComplete id="aluno" value="" required="true" completeMethod="ttrtr" 
-                                            forceSelection="true" dropdown="true"/>  
-
-                            <p:outputLabel value="Série" for="serie"/>
-                            <p:selectOneMenu id="serie">
-                                <f:selectItem itemLabel="Selecione a Série"/>
-                            </p:selectOneMenu>
-
-                            <p:outputLabel value="Turma" for="turma"/>
-                            <p:selectOneMenu id="turma">
-                                <f:selectItem itemLabel="Selecione a Turma"/>
-                            </p:selectOneMenu>
-
-                        </p:panelGrid>
-                    </p:tab>
-                </p:tabView>
             </h:form>
 
         </h:body>
