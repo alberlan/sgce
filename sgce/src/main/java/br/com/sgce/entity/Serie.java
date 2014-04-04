@@ -9,17 +9,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "estado")
-public class Estado implements Serializable{
-    
+@Table(name = "serie")
+public class Serie implements Serializable {
+
     private static final long serialVersionUID = 1L;
-    
-    @Id()
-    @GeneratedValue(strategy = GenerationType.AUTO) 
-    @Column(name = "id_estado")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    
-    @Column( name = "est_descricao", length = 22, nullable = false)
+    @Column(length = 35, nullable = false)
     private String descricao;
 
     public int getId() {
@@ -41,7 +38,7 @@ public class Estado implements Serializable{
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 53 * hash + this.id;
+        hash = 89 * hash + this.id;
         return hash;
     }
 
@@ -53,11 +50,10 @@ public class Estado implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Estado other = (Estado) obj;
+        final Serie other = (Serie) obj;
         if (this.id != other.id) {
             return false;
         }
         return true;
-    }   
-        
+    }
 }
